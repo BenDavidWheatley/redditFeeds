@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Header() {
+function Modal() {
     return (
         <div>
-            <p>header</p>
+            <p>modal</p>
         </div>
     )
 }
 
-export default Header;
+export default Modal;
