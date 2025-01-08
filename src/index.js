@@ -15,3 +15,24 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+
+/*import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+import { App } from './app/App.js';
+import { store } from './app/store.js';
+
+const root = createRoot(document.getElementById('root'));
+const render = () => {
+  root.render(
+    <App 
+      state={store.getState()}
+      dispatch={store.dispatch}
+    />
+  )
+}
+store.subscribe(render);
+render();*/

@@ -1,9 +1,9 @@
 import MainFeedComponent from './component/MainFeedComponent';
 import React from 'react';
 
-function MainFeed() {
+function MainFeed(props) {
     return(
-        <MainFeedComponent />
+        <MainFeedComponent redditPosts={props.redditPosts} toggleModal={props.toggleModal}/>
     )
 }
 

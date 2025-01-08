@@ -1,0 +1,12 @@
+.modalBackgroundBlur {
+
+    position: absolute;
+    top: 0
+}
+.modalContainer{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    background-color: black;
+
+}

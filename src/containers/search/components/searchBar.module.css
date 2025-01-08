@@ -1,0 +1,34 @@
+
+.searchBar {
+    width: 550px;
+    height: 49px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 5px 5px 5px #000000;
+    padding-left: 30px;
+    color: black;
+}
+.searchBar:hover{
+    border: 2px solid #FF4500;
+}
+.searchBar:focus{
+     outline: none;
+     border: 2px solid #FF4500;
+     padding-left: 28px;
+}
+
+@media only screen and (max-width: 900px) {
+    .searchBar {
+     width: 350px;
+     height: 35px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .searchBar {
+     width: 90vw;
+     height: 35px;
+     margin: auto;
+    }
+}
+
+
