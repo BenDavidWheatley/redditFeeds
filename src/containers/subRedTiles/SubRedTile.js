@@ -1,8 +1,11 @@
 import React from 'react';
 
 function SubRedTile() {
+
     return (
-        <p>sub tile</p>
+        <div data-testId='subRedTile'>
+             <p>sub tile</p>
+        </div>    
     )
 }
 

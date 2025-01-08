@@ -3,7 +3,7 @@ import Styles from './footer.module.css'
 
 function Footer() {
     return  (
-        <div className={Styles.footerContainer}>
+        <div data-testId='footer' className={Styles.footerContainer}>
            
         </div>
     )

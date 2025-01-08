@@ -5,7 +5,7 @@ import Header from '../header/Header';
 import MainFeed from '../mainFeed/MainFeed';
 
 import SubRedditContainer from '../subReddits/SubRedditContainer';
-import ModalContainer from '../modal/ModalContainer';
+import ModalContainer from '../modal/Modal';
 import Footer from '../footer/Footer';
 
 const redditInfo = [
@@ -72,18 +72,18 @@ function App() {
   }
 
   return (
-    <div className={Style.MainBody} >
-      <Header />
+    <div  data-testid="app" className={Style.MainBody} >
+      <Header/>
       <section className={Style.mainContainer}>
         <main>
-          <MainFeed redditPosts={redditInfo} toggleModal={toggleModal}/>
+          <MainFeed data-testid="mainfeed" redditPosts={redditInfo} toggleModal={toggleModal}/>
         </main>
         <aside >
-          <SubRedditContainer />
+          <SubRedditContainer data-testid="subRedditContainer" />
         </aside>
       </section>
-      <ModalContainer />
-      <Footer />
+      <ModalContainer data-testid="modalContainer"/>
+      <Footer data-testid="footer" />
     </div>
   );
 }

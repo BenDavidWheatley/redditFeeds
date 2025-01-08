@@ -3,7 +3,7 @@ import Style from './modal.module.css'
 
 function Modal() {
     return (
-        <section className={Style.modalBackgroundBlur}>
+        <section data-testId='modal' className={Style.modalBackgroundBlur}>
             <div className={Style.modalContainer}>
                 
             </div>

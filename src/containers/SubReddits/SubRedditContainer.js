@@ -1,10 +1,12 @@
 import React from 'react';
-import SubReddits from './components/SubReddits';
+import SubRedditTileContainer from '../subRedTiles/SubRedTile'
+
 
 function SubRedditContainer() {
     return(
-        <div>
-            <SubReddits />
+        <div  data-testid="subRedElement">
+            <p>subreddit</p>
+            <SubRedditTileContainer />
         </div>
     )
 }

@@ -4,7 +4,7 @@ import Search from '../search/Search';
 
 function Header() {
     return (
-        <section className={Styles.headerContainer}>
+        <section  data-testid="header"  className={Styles.headerContainer}>
            
                 <img src={'../../../media/redditLogo.png'} height={'80px'} width={'247px'}/>
                 <Search />
