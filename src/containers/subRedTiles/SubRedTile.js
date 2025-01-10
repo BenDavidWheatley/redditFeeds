@@ -1,11 +1,17 @@
 import React from 'react';
+import Style from './subRedTile.module.css';
 
-function SubRedTile() {
+function SubRedTile(props) {
 
     return (
-        <div data-testId='subRedTile'>
-             <p>sub tile</p>
-        </div>    
+        <section>     
+            <a className={Style.subRedAnchor}>
+                <div data-testId='subRedTile' className={Style.subRedTile}>
+                    <img src={props.img}></img>
+                    <p>{props.title}</p>
+                </div>
+            </a>
+        </section>
     )
 }
 

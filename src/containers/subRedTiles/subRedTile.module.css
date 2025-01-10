@@ -1,0 +1,15 @@
+.subRedTile {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 15px;
+}
+.subRedAnchor{
+    cursor: pointer;
+}
+.subRedTile img {
+    height: 49px;
+    width: 49px;
+    border-radius: 50px;
+}

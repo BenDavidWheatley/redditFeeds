@@ -2,12 +2,12 @@ import React from 'react';
 import Styles from './header.module.css';
 import Search from '../search/Search';
 
-function Header() {
+function Header(props) {
     return (
         <section  data-testid="header"  className={Styles.headerContainer}>
            
                 <img src={'../../../media/redditLogo.png'} height={'80px'} width={'247px'}/>
-                <Search />
+                <Search userSearch={props.userSearch}/>
             
         </section>
     )

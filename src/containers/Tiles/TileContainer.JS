@@ -3,28 +3,44 @@ import Style from './tile.module.css';
 //import Tile from './component/TileComponent';
 
 function Tile(props) {
-
     return (
         <section data-testid="tile" className={`${Style.displayFlex} ${Style.cardContainer} ${Style.imageAndPostData} ${props.image? Style.withImage : Style.withoutImage}`}>
 
             {/* Left section with image, header and read more links */}        
             <section className={`${Style.leftInnerContainer} ${Style.displayFlex}`}>
+                {props.image && <img src={props.image} className={Style.postImage} alt="Post" />}
+                {props.video && <embed src={props.video} className={Style.postVideo} alt="Video" />}
+                
+                {/* Render a gallery if props.gallery exists */}
+                {props.gallery && Array.isArray(props.gallery) && (
+    <div className={Style.galleryContainer}>
+        {props.gallery.map((imageUrl, index) => (
+            <img
+                key={index}
+                src={imageUrl}
+                onError={(e) => (e.target.src = "https://via.placeholder.com/150")} // Fallback for broken images
+                className={Style.galleryImage}
+                alt={`Gallery item ${index + 1}`}
+            />
+        ))}
+    </div>
+)}∂
 
-                <img src={props.image} className={props.image? Style.postImage: Style.displayNone}></img>
                 <div>
                     <h2 className={Style.postHeader}>{props.title}</h2>
-
-                    <p className={props.image? Style.displayNone : Style.excerpt}>{props.post}</p>
-                    <p className={`${props.image? Style.displayNone : Style.display} ${Style.excerptSpan}`}>...</p>
+                    <p className={props.image ? Style.displayNone : Style.excerpt}>{props.post}</p>
+                    <p className={`${props.image ? Style.displayNone : Style.display} ${Style.excerptSpan}`}>
+                        ...
+                    </p>
                     
                     <div className={`${Style.postMeta} ${Style.displayFlex}`}>
-                        <p className={Style.category}>{props.category}</p>             
-                        <p className={Style.datePost}>{props.datePost}</p>   
-                        <a className={Style.readMoreLink} >Read more &gt;</a>             
-                    </div> 
+                        <p className={Style.category}>{props.category}</p>
+                        <p className={Style.datePost}>{props.datePost}</p>
+                        <a className={Style.readMoreLink}>Read more &gt;</a>
+                    </div>
                 </div>
             </section>
-            
+
             {/* Right section with user info and vote, comments share etc info */}
 
             <section className={`${Style.postUserInfoContainer} ${Style.displayFlex}`}>

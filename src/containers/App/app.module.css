@@ -17,8 +17,13 @@ aside{
 }
 
 @media only screen and (max-width: 900px) {
+    .mainContainer {
+        flex-direction: column-reverse;
+    }
     aside {
-        display: none;
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
     }
     main {
         width: 100%;
