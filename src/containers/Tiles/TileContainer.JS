@@ -24,7 +24,7 @@ function Tile(props) {
             />
         ))}
     </div>
-)}∂
+)}
 
                 <div>
                     <h2 className={Style.postHeader}>{props.title}</h2>
