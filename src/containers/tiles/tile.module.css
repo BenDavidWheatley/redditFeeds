@@ -61,10 +61,9 @@
     box-shadow: 5px 5px 5px #00000080;
     margin-bottom: 25px;
 }
-.postVideo{
-    width: 100%;
-    max-width: 550px;
-    min-height: 300px;
+.videoContainer{
+   width: 550px;
+    height: 500px;
     border-radius: 7px;
     box-shadow: 5px 5px 5px #00000080;
     margin-bottom: 25px;

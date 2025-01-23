@@ -1,12 +1,46 @@
-.mainFeedContainer{
-    display:flex;
-    flex-direction: column;
+.loadingContainer {
+    position: relative;
+    margin: auto;
+    display: flex;
     justify-content: center;
-    padding-top: 88px;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    margin-top: 100px;
 }
 
-@media only screen and (max-width: 600px) {
-    .mainFeedContainer{
-        padding-top: 50px;
-    }
+.circle {
+    height: 100px;
+    width: 100px;
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    border-top: 1px solid orange;
+    border-radius: 50%;
+    border-bottom: 1px solid #FF4500;
+    position: absolute;
 }
+
+.loading {
+    color: black;
+    text-align: center;
+    position: relative;
+    z-index: 1; 
+    margin: 0; 
+}
+
+  @keyframes pulse {
+    0% {
+      transform: rotateZ(0);
+      height: 100px;
+      width: 100px;
+    }
+    50%{
+        height: 120px;
+        width: 120px;
+    }
+    100%{
+        transform: rotateZ(360deg);
+       
+    }
+  }

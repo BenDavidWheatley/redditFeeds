@@ -9,7 +9,10 @@
 }
 main {
     width: 74%;
-    padding: 0px 40px 0px 40px;
+    padding: 40px 40px 0px 40px;
+    min-height: 70vh;
+    max-height: 100vh;
+    overflow: scroll;
 }
 aside{
     width: 26%;

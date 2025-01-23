@@ -1,9 +1,16 @@
+
 .subRedTile {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     margin-bottom: 10px;
     align-items: center;
     gap: 15px;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+}
+.subRedTile:hover{
+    background-color: #29262b;
 }
 .subRedAnchor{
     cursor: pointer;
@@ -12,4 +19,16 @@
     height: 49px;
     width: 49px;
     border-radius: 50px;
+    background-color: white;
+}
+.removeButton{
+    margin-left: auto;
+    border-radius: 7px;
+    padding: 5px;
+}
+.removeButton:hover {
+    font-weight: 500;
+    color: #ff4500;
+    transition: all 0.5;
+    text-decoration: underline;
 }

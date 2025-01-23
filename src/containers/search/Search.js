@@ -1,28 +1,26 @@
 import React from 'react';
 import Styles from './searchBar.module.css';
 
-function Search(props) {
+import { useDispatch, useSelector } from 'react-redux';
+import { getSubredditAsync } from './searchSlice';
+
+function Search() {
     
+    const dispatch = useDispatch();
     return (
         <div  data-testid="searchBar" className={Styles.searchBarContainer}>
             <input 
-                className={Styles.searchBar} 
-                placeholder={'Search'} 
+                className={Styles.searchBar}
+                placeholder={'Search'}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
-                        console.log('enter hit: ' + e.target.value);
-                        props.userSearch(e.target.value); // Pass the input value to the userSearch function
+                        console.log('Enter hit: ' + e.target.value);
+                        dispatch(getSubredditAsync(e.target.value));
                     }
-                }}>
-                
-            
-            </input>
+                }}     
+            ></input>
         </div>
     )
 }
 
 export default Search;
-/*
-</div> <div  data-testid="searchBar" className={Styles.searchBarContainer}>
-<input className={Styles.searchBar} placeholder={'Search'} onChange={props.userSearch()}></input>
-</div>*/
