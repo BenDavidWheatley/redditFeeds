@@ -4,9 +4,12 @@ import { formatDistanceToNow } from 'date-fns';
 import Gallery from '../gallery/gallery';
 import Image from '../image/image';
 import Video from '../video/video';
+import { toggleModal }from '../modal/modalSlice';
 
 
 function Tile(props) {
+
+    const dispatch = useDispatch();
 
     const title = props.data.title;
     const author = props.data.author;
@@ -15,7 +18,8 @@ function Tile(props) {
     const dateCreated = props.data.created; 
     const result = formatDistanceToNow(new Date(dateCreated * 1000), { addSuffix: true });
     const votes = parseInt(props.data.ups - props.data.downs);
-    const comments = props.data.num_comments;
+    const totalComments = props.data.num_comments;
+    const comments = props.data.url;
     const thumbnail = props.data.thumbnail
     const gallery = props.data?.media_metadata;
 
@@ -23,6 +27,9 @@ function Tile(props) {
      const embedHtml = props.data?.secure_media_embed?.content;
      const redditVideo = props.data?.secure_media?.reddit_video;
      let video = null;
+
+     
+
 
      if(embedHtml) {
         const regex = /src="(https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]+)/;
@@ -36,6 +43,23 @@ function Tile(props) {
      let image = null;
      if(props.data.url.includes('jpeg') || props.data.url.includes('png')){
          image = props.data.url;
+     }
+
+     let modalObj ={
+        title: title,
+        author: author,
+        post: post,
+        category: category,
+        date: result,
+        votes: votes,
+        totalComments: totalComments,
+        comments: comments,
+        thumbnail: thumbnail,
+        gallery: gallery,
+        video: video,
+        redditVideo: redditVideo,
+        image: image
+
      }
 
 
@@ -58,7 +82,9 @@ function Tile(props) {
                     <div className={`${Style.postMeta} ${Style.displayFlex}`}>
                         <p className={Style.category}>{category}</p>
                         <p className={Style.datePost}>{result}</p>
-                        <a className={Style.readMoreLink}>Read more &gt;</a>
+                        <a className={Style.readMoreLink} onClick={() => dispatch(toggleModal(modalObj))}>Read more &gt;</a>
+
+                       
                     </div>
                 </div>
             </section>
@@ -92,7 +118,7 @@ function Tile(props) {
                             <path d="M14.956 7.625C14.956 11.1458 12.1018 14 8.581 14C7.7734 14 7.0009 13.8498 6.28989 13.5759C6.15989 13.5258 6.09489 13.5008 6.0432 13.4889C5.99235 13.4772 5.95555 13.4722 5.90342 13.4703C5.85041 13.4682 5.79225 13.4742 5.67594 13.4862L1.83518 13.8833C1.46899 13.9211 1.2859 13.9401 1.1779 13.8741C1.08383 13.8168 1.01976 13.7209 1.0027 13.6121C0.983119 13.4871 1.07061 13.3251 1.2456 13.0013L2.47234 10.7306C2.57337 10.5436 2.62388 10.4501 2.64676 10.3602C2.66935 10.2715 2.67482 10.2074 2.66759 10.116C2.66027 10.0236 2.61969 9.9032 2.53855 9.66245C2.3229 9.0227 2.20602 8.3375 2.20602 7.625C2.20602 4.10419 5.0602 1.25 8.581 1.25C12.1018 1.25 14.956 4.10419 14.956 7.625Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
 
-                        <p>{comments}</p>
+                        <p>{totalComments}</p>
                     </div>
                     <div className={Style.postInfo}>
                         <svg className={Style.svg} width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">

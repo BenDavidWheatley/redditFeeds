@@ -18,6 +18,12 @@ aside{
     width: 26%;
     background-color: #FF4500;
 }
+.showModal {
+    display: block;
+}
+.hideModal {
+    display: none;
+}
 
 @media only screen and (max-width: 900px) {
     .mainContainer {

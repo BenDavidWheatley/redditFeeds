@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Style from './mainFeedComp.module.css';
 
-function MainFeed() {
-    const reddits = useSelector((state) => state.redditConnect);
-
+function MainFeed(props) {
+    //const reddits = useSelector((state) => state.redditConnect);
+    const reddits = props.reddits;
     useEffect(() => {
         if (reddits && reddits.data && reddits.data.children) {
             console.log("This is the state:", reddits.data.children);

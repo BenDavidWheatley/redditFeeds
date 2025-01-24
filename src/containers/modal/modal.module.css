@@ -1,5 +1,5 @@
 .modalBackgroundBlur {
-    display: none;
+
     position: absolute;
     top: 0
 }
@@ -10,3 +10,10 @@
     background-color: black;
 
 }
+.hide{
+    display: none;
+  }
+  
+.show {
+    display: block;
+  }

@@ -11,12 +11,10 @@ const savedSubs = createSlice({
         addSubreddit: (state, action) => {
             state.subs.push(action.payload);
             localStorage.setItem('mySubReddits', JSON.stringify(state.subs));
-            console.log(state);
         },
         removeSubreddit: (state, action) => {
             state.subs = state.subs.filter(sub => sub !== action.payload);
             localStorage.setItem('mySubReddits', JSON.stringify(state.subs));
-            console.log(state);
         },
     }
 });
