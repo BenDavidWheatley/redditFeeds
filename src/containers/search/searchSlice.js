@@ -8,7 +8,9 @@ export const getSubredditAsync = createAsyncThunk(
     const noSpaces = subreddit.replace(/\s+/g, '');
     const response = await fetch(`/r/${noSpaces}.json`);
     const json = await response.json();
-    return json;
+    const about = await fetch(`/r/${noSpaces}/about.json`);
+    const aboutJson = await about.json()
+    return [json, aboutJson];
   }
 );
 

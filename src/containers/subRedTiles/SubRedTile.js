@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSubredditAsync } from '../search/searchSlice';
 import { removeSubreddit } from '../subReddits/subRedSlice'; // Adjust the import path to match your file structure
 
+
 function SubRedTile(props) {
     const dispatch = useDispatch();
-
+    
     return (
         <section className={Style.mySubContainer}>     
             <a 
@@ -14,8 +15,8 @@ function SubRedTile(props) {
                 onClick={() => dispatch(getSubredditAsync(props.title))}
             >
                 <div data-testid='subRedTile' className={Style.subRedTile}>
-                    <img src={props.img} alt={props.title} />
-                    <p>{props.title}</p>
+                 
+                    <p className={Style.title}>{props.title}</p>
                     <p 
                         className={Style.removeButton}
                         onClick={(e) => {

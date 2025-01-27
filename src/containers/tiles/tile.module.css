@@ -191,11 +191,14 @@
     margin-bottom: 47px;
 }
 
-.userInfo img{
+.userInfoImg{
     height: 49px;
     width: 49px;
     border-radius: 50px;
     box-shadow: 5px 5px 5px #00000080;
+    fill: #ff4500;
+    border: 1px solid #ff4500;
+    background: white;
 }
 .userInfo p {
     color: #f8f8f8;

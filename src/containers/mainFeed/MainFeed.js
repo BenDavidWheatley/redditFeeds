@@ -6,18 +6,19 @@ import Style from './mainFeedComp.module.css';
 function MainFeed(props) {
     //const reddits = useSelector((state) => state.redditConnect);
     const reddits = props.reddits;
-    useEffect(() => {
+    
+    /*useEffect(() => {
         if (reddits && reddits.data && reddits.data.children) {
             console.log("This is the state:", reddits.data.children);
         }
-    }, [reddits]);
+    }, [reddits]); */
 
     return (
         <div className={Style.container}>
             {reddits && reddits.data && reddits.data.children ? (
                 reddits.data.children.map((child, index) => (
                     <div key={index}>
-                        <Tile data={child.data} />
+                        <Tile data={child.data} iconImage={props.iconImage}/>
                     </div>
                 ))
             ) : (

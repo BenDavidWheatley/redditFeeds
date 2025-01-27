@@ -12,6 +12,7 @@ function SubRedditContainer(props) {
         const inputElement = document.getElementById('subInput');
         const value = inputElement.value.trim();
         if (value) {
+
             dispatch(addSubreddit(value));
             inputElement.value = ''; // Clear input after adding
         }
@@ -33,6 +34,7 @@ function SubRedditContainer(props) {
             </button>
 
             {subs.map((sub, index) => (
+              
                 <div key={index}>
                     <SubRedditTile 
                         className={Style.subRedTile}
@@ -47,3 +49,5 @@ function SubRedditContainer(props) {
 }
 
 export default SubRedditContainer;
+
+

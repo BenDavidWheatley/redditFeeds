@@ -9,12 +9,21 @@
     border-radius: 20px;
     padding: 5px 10px 5px 10px;
 }
+.title {
+    color: black;
+    font-weight: 600;
+}   
 .subRedTile:hover{
     background-color: #29262b;
+
+}
+.subRedTile:hover .title{
+    color: white;
 }
 .subRedAnchor{
     cursor: pointer;
 }
+
 .subRedTile img {
     height: 49px;
     width: 49px;
@@ -25,6 +34,7 @@
     margin-left: auto;
     border-radius: 7px;
     padding: 5px;
+    font-size: 12px;
 }
 .removeButton:hover {
     font-weight: 500;
