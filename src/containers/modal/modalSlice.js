@@ -1,21 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    toggle: false,
-    data: false
-};
-
-const toggleSlice = createSlice({
-    name: 'toggleModal',
-    initialState,
+const modalSlice = createSlice({
+    name: 'modal',
+    initialState: {
+        toggle: false,
+        data: null, // Store modal data
+    },
     reducers: {
-        toggleModal: (state,action) => {
-            state.toggle = !state.toggle; 
-            state.data = action.payload;
-            console.log(action.payload); 
-        }
-    }
+        toggleModal: (state, action) => {
+            state.toggle = !state.toggle;
+            state.data = action.payload || null; // Update modal data
+        },
+    },
 });
 
-export const { toggleModal } = toggleSlice.actions;
-export default toggleSlice.reducer;
+export const { toggleModal } = modalSlice.actions;
+export default modalSlice.reducer;
+

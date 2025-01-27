@@ -1,14 +1,35 @@
 .modalBackgroundBlur {
-
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px);  /* Apply blur to the background */
     position: absolute;
-    top: 0
+    top: 0;
+    padding: 20%;
+    padding-top: 50px;
+    width: 100vw;
+ 
 }
-.modalContainer{
-    width: 300px;
-    height: 300px;
-    margin: auto;
-    background-color: black;
+.readMoreLink{
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 30px;
+}
+.readMoreLink:hover {
+  color:  #ff4500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
+.modalContainer{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin: auto;
+    background: linear-gradient(to bottom right, #485363, #232C3D);
+    border-radius: 7px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
 }
 .hide{
     display: none;
@@ -17,3 +38,60 @@
 .show {
     display: block;
   }
+.infoContainer{
+  align-self: flex-start;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+.modalHeader {
+  align-self: center;
+  margin-bottom: 20px;
+ 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+.post {
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.category{
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  background-color: #ff4500;
+  padding: 3px;
+  width: 80px;
+  border-radius: 7px;
+  margin: auto 20px auto 0px;
+}
+.displayFlex {
+  display: flex;
+}
+.postMeta {
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: 20px;
+  width: 100%;
+
+  align-items: center;
+}
+.datePost{
+  font-size: 11px;
+  font-weight: 300;
+  margin: auto;
+  margin-left: 0px;
+  list-style-type: circle;
+}
+.datePost::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 8px; 
+}
+.userInfo{
+  gap: 18px;
+  align-items: center;
+  min-width: 114px;
+  color: #f8f8f8;
+  font-size: 11px;
+}

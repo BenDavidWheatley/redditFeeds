@@ -1,6 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Async thunk to fetch comments
+function processComments(apiComments) {
+    return apiComments.map((comment) => ({
+        id: comment.id,
+        author: comment.author,
+        body: comment.body,
+        replies: comment.replies
+            ? processComments(comment.replies.data.children.map((child) => child.data))
+            : [], // Recursively process replies if they exist
+    }));
+}
+
 export const fetchComments = createAsyncThunk(
     'comments/fetchComments',
     async (postUrl, thunkAPI) => {
@@ -8,9 +18,9 @@ export const fetchComments = createAsyncThunk(
             const response = await fetch(`${postUrl}.json`);
             const data = await response.json();
 
-            // Extract comments from the response
+            // Extract and process comments
             const commentsData = data[1]?.data?.children.map((child) => child.data);
-            return commentsData || [];
+            return processComments(commentsData || []);
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }

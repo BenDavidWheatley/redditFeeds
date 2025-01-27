@@ -8,10 +8,18 @@ import SubRedditContainer from '../subReddits/SubRedditContainer';
 import ModalContainer from '../modal/Modal';
 import Footer from '../footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
+import { getSubredditAsync } from '../search/searchSlice';
 
 function App() {
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSubredditAsync('popular'));
+  }, [dispatch]);
+
   const reddits = useSelector((state) => state.redditConnect);
+
   return (
     <div  data-testid="app" className={Style.MainBody} >
       <Header />

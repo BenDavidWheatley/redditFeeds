@@ -1,0 +1,51 @@
+.postInfoContainer{
+    flex-direction: column;
+    gap: 18px;
+    width: 250px;
+}
+.displayRow{
+    display: flex;
+    flex-direction: row;
+}
+.postInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    border: 1px solid #ff4500;
+    border-radius: 7px;
+    background-color:#29262b;
+    color: #f8f8f8;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.postInfo:nth-child(2){
+    justify-content: start;
+    gap: 11px;
+    padding-left: 5px;
+}
+.svg, .voteDown, .voteUp{
+   stroke: #FF4500;
+   transition: stroke 0.3s ease; 
+}
+@media only screen and (max-width: 1130px) {
+    .postInfoContainer{
+        margin-top: 50px;
+        flex-direction: row;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .postInfo{
+        width: 20%;
+        min-width: 100px;
+    }
+    .postInfoContainer{
+        margin-top: 0px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+} 
+

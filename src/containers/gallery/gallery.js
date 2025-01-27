@@ -26,11 +26,11 @@ function Gallery(props) {
     // If we have only one image, render the single image
     if (imageKeys.length < 2) {
         return (
-            <div className={Style.galleryContainer}>
+            <div className={props.modal? Style.modal : Style.galleryContainer}>
                 <img
                     src={decodeURIComponent(props.images[imageKeys[0]].s.u.replace(/&amp;/g, '&'))}
                     alt="Gallery Image"
-                    className={Style.postImage}
+                    className={props.modal? Style.modalImage : Style.postImage}
                 />
             </div>
         );
@@ -38,7 +38,7 @@ function Gallery(props) {
 
     // If we have multiple images, render the gallery with arrows
     return (
-        <div className={Style.galleryContainer}>
+        <div className={props.modal? Style.modal : Style.galleryContainer}>
             <div onClick={slidePrev} className={`${Style.arrows} ${Style.lessThan}`}>
                 <p >&lt;</p>
             </div>
@@ -48,7 +48,7 @@ function Gallery(props) {
                 <img
                     src={decodeURIComponent(props.images[imageKeys[currentIndex]].s.u.replace(/&amp;/g, '&'))}
                     alt="Gallery Image"
-                    className={Style.postImage}
+                    className={props.modal? Style.modalImage : Style.postImage}
                 />
             </div>
 

@@ -3,8 +3,8 @@ import Style from './image.module.css';
 
 function Image(props) {
     return (
-        <div>
-            <img src={props.image} className={Style.postImage}/>
+        <div className={props.modal? Style.modalContainer : null}>
+            <img src={props.image} className={props.modal? Style.modal : Style.postImage}/>
         </div>
     )
 };

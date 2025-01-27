@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchComments, clearComments } from './commentSlice';
+import { fetchComments, clearComments } from '../comments/commentSlice';
+import Style from './comments.module.css'
 
 function Comments({ postUrl }) {
     const dispatch = useDispatch();
@@ -21,16 +22,25 @@ function Comments({ postUrl }) {
     if (error) return <p>Error loading comments: {error}</p>;
     if (!comments.length) return <p>No comments available.</p>;
 
-    return (
-        <ul>
-            {comments.map((comment) => (
-                <li key={comment.id}>
-                    <p>This is a test</p>
-                    <p><strong>{comment.author}</strong>: {comment.body}</p>
-                </li>
-            ))}
-        </ul>
-    );
+    // Recursive function to render comments and replies
+    const renderComments = (commentList) => {
+        return (
+            <ul >
+                {commentList.map((comment) => (
+                    <li className={Style.commentContainer}  key={comment.id}>
+                        <p><strong className={Style.author}>{comment.author}</strong>: {comment.body}</p>
+                        {comment.replies && comment.replies.length > 0 && (
+                            <div className={Style.replies}>
+                                {renderComments(comment.replies)}
+                            </div>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
+    return <div>{renderComments(comments)}</div>;
 }
 
 export default Comments;
