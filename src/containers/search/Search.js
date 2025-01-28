@@ -11,7 +11,7 @@ function Search() {
         <div  data-testid="searchBar" className={Styles.searchBarContainer}>
             <input 
                 className={Styles.searchBar}
-                placeholder={'Search'}
+                placeholder={'Search a reddit'}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                         console.log('Enter hit: ' + e.target.value);

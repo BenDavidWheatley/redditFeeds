@@ -14,10 +14,10 @@ main {
     max-height: 100vh;
     overflow: scroll;
 }
-aside{
+/*aside{
     width: 26%;
     background-color: #FF4500;
-}
+}*/
 .showModal {
     display: block;
 }
@@ -29,13 +29,17 @@ aside{
     .mainContainer {
         flex-direction: column-reverse;
     }
-    aside {
+   /* aside {
         width: 100%;
         height: 50px;
-        overflow: hidden;
+        z-index: 10;
+    }*/
+    .extend {
+        height: auto;
+        transition: all 0.3s;
     }
     main {
         width: 100%;
-        padding: 0px 2.5%;
+        padding: 100px 2.5%;
     }
 }

@@ -53,14 +53,14 @@
     min-width: 400px;
     height: 100%;
 }
-.postImage{
+/*.postImage{
     width: 100%;
     max-width: 550px;
     height: auto;
     border-radius: 7px;
     box-shadow: 5px 5px 5px #00000080;
     margin-bottom: 25px;
-}
+}*/
 .videoContainer{
    width: 550px;
     height: 500px;
@@ -68,7 +68,7 @@
     box-shadow: 5px 5px 5px #00000080;
     margin-bottom: 25px;
 }
-.postHeader{
+.postHeader, .noImageHeader{
     font-size:30px;
     font-weight: 400;
     margin-bottom: 25px; 
@@ -77,6 +77,7 @@
     text-transform: capitalize;
 }
 .postMeta {
+    display: flex;
     flex-direction: row;
     margin-top: auto;
     margin-bottom: 7px;
@@ -127,17 +128,19 @@
 .excerptSpan {
     margin-bottom: 30px;
 }
-@media only screen and (max-width: 1130px) and (min-width: 600px) {
-    .leftInnerContainer{
-        flex-direction: row;
-        gap: 25px;
+@media only screen and (max-width: 1130px) /*and (min-width: 600px) */{
+    .postMeta{
+        flex-wrap: wrap;
     }
-    .postImage{
-        max-width: 40%;
-        margin-bottom: 0px;
+    
+    .leftInnerContainer{
+        flex-direction: column;
+        gap: 25px;
     }
     .postHeader{
         font-size: 21px;
+    }
+    .noImageHeader{
         margin-top: 60px;
     }
    
@@ -146,9 +149,17 @@
   
     .postMeta {
         flex-wrap: wrap;
-        gap: 0px;
+        gap: 10px;
+        margin-bottom: 30px;
+        justify-content: flex-start;
         
     }
+    .readMoreLink {
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-left: 0px;
+    }  
     .leftInnerContainer {
         min-width: 0px;
     }
@@ -160,7 +171,7 @@
         line-height: 1em; 
         max-height: 3em; 
     }
-    .category {
+  /*  .category {
         margin-right: 5px;
         font-size: 8px;
         padding: 3px 8px;
@@ -175,7 +186,7 @@
         font-size: 12px;
         margin-left: auto;
         margin-top: 20px;
-    }
+    }*/
 }
 
 /* User Info */ 
@@ -205,25 +216,27 @@
     font-size: 11px;
 }
 
-@media only screen and (max-width: 1130px) and (min-width: 600px) {
+@media only screen and (max-width: 1130px)/* and (min-width: 600px) */{
+ 
     .userInfo{
         margin-top: 25px;
         margin-bottom: 30px;
         position: absolute; 
+        gap: 30px;
     }
     .userInfoPostHasImage{
         top: 0;
-        left: 44%;
+        left: 4%;
     }
     .postWithoutImage{
         top: 0;
     }
     .userInfo img{
-        height: 30px;
-        width: 30px;
+        height: 40px;
+        width: 40px;
     }
 }
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
     .userInfo {
         margin-top: 25px;
         margin-bottom: 15px;
@@ -236,5 +249,5 @@
         height: 25px;
         width: 25px;
     }
-}
+}*/
 

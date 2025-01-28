@@ -30,12 +30,13 @@ function Modal(props) {
                         <h2 className={Style.modalHeader}>{data.title}</h2>
                         <p className={Style.post}>{data.post}</p>
                         <div className={`${Style.postMeta} ${Style.displayFlex}`}>
-                            <p className={Style.category}>{data.category}</p>
-                         
+                            <div className={`${Style.displayFlex} ${Style.postingDetails}`}>
+                                <p className={Style.category}>{data.category}</p>
                                 <p className={Style.userInfo}>{data.author}</p>
                                 <p className={Style.datePost}>{data.date}</p>
-                                <PostInfo totalComments={data.totalComments} votes={data.votes} modal={modal}/>
-                                     
+                            </div>
+                            
+                            <PostInfo totalComments={data.totalComments} votes={data.votes} modal={modal}/>                    
                         </div>
                         
                         <Comments postUrl={data.comments} />

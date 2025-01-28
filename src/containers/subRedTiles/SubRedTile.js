@@ -9,13 +9,15 @@ function SubRedTile(props) {
     const dispatch = useDispatch();
     
     return (
-        <section className={Style.mySubContainer}>     
+        <section className={Style.mySubContainer}>
             <a 
-                className={Style.subRedAnchor} 
-                onClick={() => dispatch(getSubredditAsync(props.title))}
+                className={Style.subRedAnchor}
+                onClick={() => {
+                    dispatch(getSubredditAsync(props.title));
+                    props.toggleOpen(); // Call the toggleOpen function
+                }}
             >
                 <div data-testid='subRedTile' className={Style.subRedTile}>
-                 
                     <p className={Style.title}>{props.title}</p>
                     <p 
                         className={Style.removeButton}
@@ -33,5 +35,3 @@ function SubRedTile(props) {
 }
 
 export default SubRedTile;
-
-

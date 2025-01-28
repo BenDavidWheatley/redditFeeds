@@ -70,6 +70,9 @@
 }
 .postMeta {
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
   margin-top: auto;
   margin-bottom: 20px;
   width: 100%;
@@ -94,4 +97,24 @@
   min-width: 114px;
   color: #f8f8f8;
   font-size: 11px;
+}
+.postingDetails p{
+  justify-self: center;
+  align-content: center;
+}
+@media only screen and (max-width: 1130px) {
+  .modalBackgroundBlur {
+    padding: 10%;
+  }
+  
+
+}
+@media only screen and (max-width: 900px) {
+  .modalBackgroundBlur {
+    padding: 5%;
+  }
+  .modalContainer{
+    padding: 30px 2.5%;
+  }
+
 }

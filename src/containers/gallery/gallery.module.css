@@ -22,17 +22,31 @@
     position: relative;
     
 }
-
 .postImage {
     width: 100%;
     max-width: 550px;
     height: auto;
     border-radius: 7px;
     box-shadow: 5px 5px 5px #00000080;
-    margin-bottom: 25px;
     transition: transform 0.5s ease-in-out;  /* Smooth transition effect */
 
 }
+@media only screen and (max-width: 1130px){
+    .postImage {
+        max-width: 100%;
+        margin-top: 80px;
+    }
+    .imageContainer, .galleryContainer{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .postImage {
+        min-width: 100%;
+        margin-top: 50px;
+    }
+}
+
 .modalImage {
     max-width: 100%;
     margin-bottom: 30px;
@@ -64,3 +78,4 @@
 .greaterThan {
     right: 10px; /* Position the right arrow on the right side */
 }
+

@@ -1,36 +1,38 @@
-// src/containers/App/app.test.js
 
+// src/containers/App/app.test.js
 import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store'; // This is the mock store import
-import thunk from 'redux-thunk'; // Import redux-thunk middleware
+import configureStore from 'redux-mock-store';  // Mock store
+import thunk from 'redux-thunk';  // Middleware for async actions
 import App from './App';
 
-// Create the mock store with redux-thunk middleware
+// Create a mock store with redux-thunk middleware
 const mockStore = configureStore([thunk]);
 
 describe('App Component', () => {
   let store;
 
   beforeEach(() => {
-    // Mock initial state for testing
+    // Set up a mock store with initial state
     store = mockStore({
-      redditConnect: [
-        // Mock reddit posts data
-        {
-          data: [
-            { title: 'Reddit Post 1', id: 1 },
-            { title: 'Reddit Post 2', id: 2 },
-          ],
-        },
-        {
-          // Simulated subreddit data
-          icon_img: 'https://someimageurl.com/icon.png',
-        },
-      ],
+      redditConnect: {
+        posts: [
+          { title: 'Reddit Post 1', id: 1 },
+          { title: 'Reddit Post 2', id: 2 },
+        ],
+      },
+      mySubReddits: {
+        savedSubreddits: ['r/ReactJS', 'r/JavaScript'],
+      },
+      toggleModal: {
+        isModalOpen: false,
+      },
+      comments: {
+        data: [],
+      },
     });
 
-    // Mock implementation for async actions
+    // Mock dispatch to simulate async actions
     store.dispatch = jest.fn().mockResolvedValueOnce({});
   });
 
@@ -45,20 +47,15 @@ describe('App Component', () => {
   });
 
   it('dispatches getSubredditAsync on mount and shows subreddit data', async () => {
-    // Render the App component
     render(
       <Provider store={store}>
         <App />
       </Provider>
     );
 
-    // Wait for the subreddit data to be displayed
     await waitFor(() => expect(screen.getByTestId('subRedditContainer')).toBeInTheDocument());
-
-    // Verify that the subreddit icon image is being used correctly
-    const iconImage = store.getState().redditConnect[1].icon_img;
-    expect(iconImage).toBe('https://someimageurl.com/icon.png');
-    expect(screen.getByTestId('subRedditContainer').textContent).toContain(iconImage);
+    expect(screen.getByText('r/ReactJS')).toBeInTheDocument();
+    expect(screen.getByText('r/JavaScript')).toBeInTheDocument();
   });
 
   it('renders Reddit posts in MainFeed', async () => {
@@ -68,10 +65,7 @@ describe('App Component', () => {
       </Provider>
     );
 
-    // Wait for the posts to be displayed
     await waitFor(() => expect(screen.getByTestId('mainfeed')).toBeInTheDocument());
-
-    // Verify that posts are rendered
     expect(screen.getByText('Reddit Post 1')).toBeInTheDocument();
     expect(screen.getByText('Reddit Post 2')).toBeInTheDocument();
   });
@@ -83,7 +77,6 @@ describe('App Component', () => {
       </Provider>
     );
 
-    // Check for the presence of Header, Footer, and Modal
     expect(screen.getByTestId('header')).toBeInTheDocument();
     expect(screen.getByTestId('footer')).toBeInTheDocument();
     expect(screen.getByTestId('modalContainer')).toBeInTheDocument();

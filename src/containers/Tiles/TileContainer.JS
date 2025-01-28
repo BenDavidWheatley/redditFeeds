@@ -62,21 +62,20 @@ function Tile(props) {
         video: video,
         redditVideo: redditVideo,
         image: image
-
      }
 
 
     return (
-        <section data-testid="tile" className={`${Style.displayFlex} ${Style.cardContainer} ${Style.imageAndData} ${image || gallery || video ? Style.withImage : Style.withoutImage}`}>
+        <div data-testid="tile" className={`${Style.displayFlex} ${Style.cardContainer} ${Style.imageAndData} ${image || gallery || video ? Style.withImage : Style.withoutImage}`}>
 
             {/* Left section with image, header and read more links */}        
-            <section className={`${Style.leftInnerContainer} ${Style.displayFlex}`}>
+            <div className={`${Style.leftInnerContainer} ${Style.displayFlex}`}>
                 {gallery? ( <Gallery images={gallery} /> ) : 
                 image? ( <Image image={image}/> ) :
                 video? ( <Video className={Style.videoContainer} video={video}/> ) : null }
 
                 <div>
-                    <h2 className={Style.postHeader}>{title}</h2>
+                    <h2 className={`${image || gallery || video ? Style.postHeader : Style.noImageHeader}`}>{title}</h2>
                     <p className={image || gallery || video? Style.displayNone : Style.excerpt}>{post}</p>
                     <p className={`${image || gallery || video ? Style.displayNone : Style.display} ${Style.excerptSpan}`}>
                         ...
@@ -92,25 +91,25 @@ function Tile(props) {
                         </a>      
                     </div>
                 </div>
-            </section>
+            </div>
 
             {/* Right section with user info and vote, comments share etc info */}
 
-            <section className={`${Style.postUserInfoContainer} ${Style.displayFlex}`}>
+            <div className={`${Style.postUserInfoContainer}`}>
 
                 {/*User info */}
 
                 <div className={`${Style.userInfo} ${Style.displayFlex} ${image || video || gallery? Style.userInfoPostHasImage : Style.postWithoutImage}`}>
                     {iconImage? <img className={Style.userInfoImg} src={iconImage}></img> : <svg className={Style.userInfoImg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path></svg>
                                         }                    
-                                <p>{author}</p>
+                    <p>{author}</p>
                 </div>
 
                 {/* Post sharing, comments etc */}
                 
                 <PostInfo votes={votes} totalComments={totalComments} />
-            </section>
-        </section>
+            </div>
+        </div>
     )
 } 
 

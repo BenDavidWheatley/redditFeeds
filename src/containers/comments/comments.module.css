@@ -1,23 +1,31 @@
 .commentContainer{
     border-left: #ff4500 solid 1px;
     border-bottom-left-radius: 20px;
-    padding-left: 20px;
-    margin: auto;
-    margin-top: 20px;
-    width: 90%;
-    margin-bottom: 20px;
+    padding-left: 10px;
+    margin: 20px auto;
+    width: 80%;
     padding-bottom: 20px;
     list-style-type: none;
-    
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
 }
 .commentContainer:nth-child(0){
     padding-bottom: 0px;
 }
 .commentContainer li {
-    padding-left: 20px;
+ 
     list-style-type: none;
+}
+.commentLists {
+    padding-left: 0px;
 }
 .author {
     color:#ff4500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 900px) {
+    .commentContainer{
+        width: 90%;
+    }
 }

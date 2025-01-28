@@ -25,7 +25,7 @@ function Comments({ postUrl }) {
     // Recursive function to render comments and replies
     const renderComments = (commentList) => {
         return (
-            <ul >
+            <ul className={Style.commentLists}>
                 {commentList.map((comment) => (
                     <li className={Style.commentContainer}  key={comment.id}>
                         <p><strong className={Style.author}>{comment.author}</strong>: {comment.body}</p>
