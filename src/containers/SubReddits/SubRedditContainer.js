@@ -4,7 +4,8 @@ import Style from './subReddits.module.css';
 import { addSubreddit } from './subRedSlice';
 import { useSelector, useDispatch } from "react-redux";
 
-function SubRedditContainer(props) {
+function SubRedditContainer() {
+
     const dispatch = useDispatch();
     const subs = useSelector((state) => state.mySubReddits.subs);
 
@@ -50,14 +51,11 @@ function SubRedditContainer(props) {
                         id={sub.id}
                         title={sub}
                         image={sub}
-                        toggleOpen={toggleOpen} // Pass the toggleOpen function
+                        toggleOpen={toggleOpen}
                     />
                 </div>
             ))}
-
-
-            </div>
-           
+            </div>        
         </div>
     );
 }

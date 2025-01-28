@@ -2,8 +2,7 @@ import React from 'react';
 import Style from './subRedTile.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSubredditAsync } from '../search/searchSlice';
-import { removeSubreddit } from '../subReddits/subRedSlice'; // Adjust the import path to match your file structure
-
+import { removeSubreddit } from '../subReddits/subRedSlice'; 
 
 function SubRedTile(props) {
     const dispatch = useDispatch();
@@ -14,7 +13,7 @@ function SubRedTile(props) {
                 className={Style.subRedAnchor}
                 onClick={() => {
                     dispatch(getSubredditAsync(props.title));
-                    props.toggleOpen(); // Call the toggleOpen function
+                    props.toggleOpen(); 
                 }}
             >
                 <div data-testid='subRedTile' className={Style.subRedTile}>
@@ -22,7 +21,7 @@ function SubRedTile(props) {
                     <p 
                         className={Style.removeButton}
                         onClick={(e) => {
-                            e.stopPropagation(); // Prevent triggering the parent onClick
+                            e.stopPropagation(); 
                             dispatch(removeSubreddit(props.title));
                         }}
                     >

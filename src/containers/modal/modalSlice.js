@@ -4,12 +4,12 @@ const modalSlice = createSlice({
     name: 'modal',
     initialState: {
         toggle: false,
-        data: null, // Store modal data
+        data: null, 
     },
     reducers: {
         toggleModal: (state, action) => {
             state.toggle = !state.toggle;
-            state.data = action.payload || null; // Update modal data
+            state.data = action.payload || null; 
         },
     },
 });

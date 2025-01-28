@@ -11,7 +11,6 @@ function Comments({ postUrl }) {
         if (postUrl) {
             dispatch(fetchComments(postUrl));
         }
-
         // Clear comments when the component unmounts
         return () => {
             dispatch(clearComments());

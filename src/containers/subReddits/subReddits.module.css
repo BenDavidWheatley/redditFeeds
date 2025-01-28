@@ -1,4 +1,4 @@
-    .subRedContainer{
+    .subRedContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -7,7 +7,8 @@
         height: 100%;
         background-color: #FF4500;
     }
-    .subRedh2{
+
+    .subRedh2 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -15,13 +16,16 @@
         gap: 10px;
         margin-bottom: 30px;
     }
-    .subRedh2 p{
+
+    .subRedh2 p {
         display: none;
         cursor: pointer;
     }
+
     .subRedTile {
         align-self: left;
     }
+
     input {
         color: black;
         height: 25px;
@@ -30,6 +34,7 @@
         border: none;
         padding-left: 10px;
     }
+
     button {
         height: 25px;
         margin-bottom: 25px;
@@ -38,12 +43,14 @@
         background-color: #29262b;
         cursor: pointer;
     }
+
     input:focus {
         box-shadow: 5px 5px 5px #000000;
         border: none;
         outline: none;
         transition: all 0.3s;
     }
+
     @media only screen and (max-width: 900px) {
         .subRedContainer {
             position: absolute;
@@ -63,10 +70,11 @@
             display: block;
             margin: auto 20px;
         }
-        .tileContainer{
+        .tileContainer {
             overflow: scroll;
         }
     }
+
     @media only screen and (max-width: 600px) {
         .subRedContainer {
             padding: 2.5%;

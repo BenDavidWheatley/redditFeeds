@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './searchBar.module.css';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getSubredditAsync } from './searchSlice';
 
 function Search() {

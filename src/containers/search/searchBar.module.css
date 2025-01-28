@@ -8,10 +8,12 @@
     padding-left: 30px;
     color: black;
 }
-.searchBar:hover{
+
+.searchBar:hover {
     border: 2px solid #FF4500;
 }
-.searchBar:focus{
+
+.searchBar:focus {
      outline: none;
      border: 2px solid #FF4500;
      padding-left: 28px;

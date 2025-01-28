@@ -1,14 +1,16 @@
-.postInfoContainer{
+.postInfoContainer {
     display: flex;
     flex-direction: column;
     gap: 18px;
     width: 250px;
 }
-.displayRow{
+
+.displayRow {
     display: flex;
     flex-direction: row;
 }
-.postInfo{
+
+.postInfo {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -21,15 +23,18 @@
     font-size: 11px;
     margin-bottom: 10px;
 }
-.postInfo:nth-child(2){
+
+.postInfo:nth-child(2) {
     justify-content: start;
     gap: 11px;
     padding-left: 5px;
 }
-.svg, .voteDown, .voteUp{
+
+.svg, .voteDown, .voteUp {
    stroke: #FF4500;
    transition: stroke 0.3s ease; 
 }
+
 @media only screen and (max-width: 1130px) {
     .postInfoContainer{
         margin-top: 50px;
@@ -42,12 +47,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .postInfo{
+    .postInfo {
         width: 20%;
         min-width: 100px;
-      
     }
-    .postInfoContainer{
+    
+    .postInfoContainer {
         margin-top: 0px;
         flex-wrap: wrap;
     }

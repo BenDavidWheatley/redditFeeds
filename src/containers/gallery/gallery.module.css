@@ -3,34 +3,65 @@
     max-width: 550px;
     height: auto;
     display: flex;
-    justify-content: space-between; /* Distribute items with space between them */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
     border-radius: 7px;
-
     margin-bottom: 25px;
-    position: relative; /* Allows absolute positioning of arrows */
-    /*overflow: hidden;*/
+    position: relative; 
 }
+
 .modal {
     width: 100%;
     min-width: 100%;
     display: flex;
-    justify-content: space-between; /* Distribute items with space between them */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
     border-radius: 7px;
     margin-bottom: 25px;
     position: relative;
-    
 }
+
 .postImage {
     width: 100%;
     max-width: 550px;
     height: auto;
     border-radius: 7px;
     box-shadow: 5px 5px 5px #00000080;
-    transition: transform 0.5s ease-in-out;  /* Smooth transition effect */
-
+    transition: transform 0.5s ease-in-out;
 }
+
+.modalImage {
+    max-width: 100%;
+    margin-bottom: 30px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px #00000080;
+    margin-bottom: 25px;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.arrows {
+    height: 30px; 
+    width: 30px;   
+    background-color: #ffffff80;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer;
+}
+
+.lessThan {
+    left: 10px;  
+}
+
+.greaterThan {
+    right: 10px; 
+}
+
+
 @media only screen and (max-width: 1130px){
     .postImage {
         max-width: 100%;
@@ -46,36 +77,3 @@
         margin-top: 50px;
     }
 }
-
-.modalImage {
-    max-width: 100%;
-    margin-bottom: 30px;
-    border-radius: 7px;
-    box-shadow: 5px 5px 5px #00000080;
-    margin-bottom: 25px;
-    transition: transform 0.5s ease-in-out;  /* Smooth transition effect */
-}
-
-
-.arrows {
-    height: 30px; 
-    width: 30px;   
-    background-color: #ffffff80;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; /* Absolutely position the arrows */
-    top: 50%; /* Vertically center the arrows */
-    transform: translateY(-50%); /* Adjust the centering to be exactly in the middle */
-    cursor: pointer;
-}
-
-.lessThan {
-    left: 10px;  /* Position the left arrow on the left side */
-}
-
-.greaterThan {
-    right: 10px; /* Position the right arrow on the right side */
-}
-

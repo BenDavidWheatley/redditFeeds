@@ -1,13 +1,12 @@
 import Tile from '../tiles/TileContainer';
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+
 import Style from './mainFeedComp.module.css';
 
 function MainFeed(props) {
 
     const reddits = props.reddits;
  
-
     return (
         <div  data-testid="mainFeed"  className={Style.container}>
             {reddits && reddits.data && reddits.data.children ? (

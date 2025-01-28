@@ -1,6 +1,5 @@
-  // App.js
-  import React, { useEffect } from 'react';
 
+  import React, { useEffect } from 'react';
   import Style from './app.module.css';
   import Header from '../header/Header';
   import MainFeed from '../mainFeed/MainFeed';

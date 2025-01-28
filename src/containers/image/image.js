@@ -9,9 +9,9 @@ function Image(props) {
     return (
         <div className={props.modal ? Style.modalContainer : null}>
             <img 
-                src={props.image}  // Use props.image here
+                src={props.image} 
                 className={props.modal ? Style.modal : Style.postImage}
-                alt="Gallery Image"  // Set alt text for the image
+                alt="Gallery Image" 
             />
         </div>
     );

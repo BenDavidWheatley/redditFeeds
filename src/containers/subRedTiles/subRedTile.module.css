@@ -1,4 +1,3 @@
-
 .subRedTile {
     display: flex;
     flex-direction: row;
@@ -9,18 +8,22 @@
     border-radius: 20px;
     padding: 5px 10px 5px 10px;
 }
+
 .title {
     color: black;
     font-weight: 600;
 }   
-.subRedTile:hover{
+
+.subRedTile:hover {
     background-color: #29262b;
 
 }
-.subRedTile:hover .title{
+
+.subRedTile:hover .title {
     color: white;
 }
-.subRedAnchor{
+
+.subRedAnchor {
     cursor: pointer;
 }
 
@@ -30,12 +33,14 @@
     border-radius: 50px;
     background-color: white;
 }
-.removeButton{
+
+.removeButton {
     margin-left: auto;
     border-radius: 7px;
     padding: 5px;
     font-size: 12px;
 }
+
 .removeButton:hover {
     font-weight: 500;
     color: #ff4500;
