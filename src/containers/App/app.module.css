@@ -8,16 +8,17 @@
     justify-content: space-between;
 }
 main {
-    width: 74%;
+
     padding: 40px 40px 0px 40px;
     min-height: 70vh;
     max-height: 100vh;
     overflow: scroll;
+    margin: auto;
 }
-/*aside{
+aside{
     width: 26%;
     background-color: #FF4500;
-}*/
+}
 .showModal {
     display: block;
 }
