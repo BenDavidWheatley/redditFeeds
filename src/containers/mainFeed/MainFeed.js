@@ -4,17 +4,12 @@ import { useSelector } from 'react-redux';
 import Style from './mainFeedComp.module.css';
 
 function MainFeed(props) {
-    //const reddits = useSelector((state) => state.redditConnect);
+
     const reddits = props.reddits;
-    
-    /*useEffect(() => {
-        if (reddits && reddits.data && reddits.data.children) {
-            console.log("This is the state:", reddits.data.children);
-        }
-    }, [reddits]); */
+ 
 
     return (
-        <div className={Style.container}>
+        <div  data-testid="mainFeed"  className={Style.container}>
             {reddits && reddits.data && reddits.data.children ? (
                 reddits.data.children.map((child, index) => (
                     <div key={index}>
@@ -22,7 +17,7 @@ function MainFeed(props) {
                     </div>
                 ))
             ) : (
-                <div className={Style.loadingContainer}>
+                <div data-testid="circle" className={Style.loadingContainer}>
                     <div className={Style.circle}></div>
                     <p className={Style.loading}>Loading...</p>
                 </div>

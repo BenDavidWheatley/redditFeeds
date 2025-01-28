@@ -15,7 +15,7 @@ function Modal(props) {
     const dispatch = useDispatch();
     const modal = true;
     return (
-        <div className={display ? Style.show : Style.hide}>
+        <div data-testid='modalMainContainer' className={display ? Style.show : Style.hide}>
             <section data-testid="modal" className={Style.modalBackgroundBlur}>
                 <div className={Style.modalContainer}>
                     <a className={Style.readMoreLink} onClick={() => dispatch(toggleModal())}>

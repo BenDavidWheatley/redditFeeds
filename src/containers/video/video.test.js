@@ -1,6 +1,6 @@
 import React from 'react';  // Required for JSX
 import { render, screen } from '@testing-library/react';
-import Video from './Video'; // Import the Video component
+import Video from './video'; // Import the Video component
 import Style from './video.module.css'; // Assuming you have the styles
 
 describe('Video Component', () => {
