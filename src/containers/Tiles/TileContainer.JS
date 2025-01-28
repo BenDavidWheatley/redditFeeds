@@ -1,3 +1,4 @@
+    /*Sometimes this file changes the extension to an uppercase JS, no idea why*/
     import Style from './tile.module.css';
     import React from 'react';
     import { useSelector, useDispatch } from 'react-redux';
