@@ -26,7 +26,7 @@ function Gallery(props) {
             <div className={props.modal? Style.modal : Style.galleryContainer}>
                 <img
                     src={decodeURIComponent(props.images[imageKeys[0]].s.u.replace(/&amp;/g, '&'))}
-                    alt="Gallery Image"
+                    alt="Gallery"
                     className={props.modal? Style.modalImage : Style.postImage}
                 />
             </div>
@@ -43,7 +43,7 @@ function Gallery(props) {
             <div className={Style.imageContainer}>
                 <img
                     src={decodeURIComponent(props.images[imageKeys[currentIndex]].s.u.replace(/&amp;/g, '&'))}
-                    alt="Gallery Image"
+                    alt="Gallery"
                     className={props.modal? Style.modalImage : Style.postImage}
                 />
             </div>

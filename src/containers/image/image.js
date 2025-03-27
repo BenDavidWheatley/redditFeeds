@@ -11,7 +11,7 @@ function Image(props) {
             <img 
                 src={props.image} 
                 className={props.modal ? Style.modal : Style.postImage}
-                alt="Gallery Image" 
+                alt="Gallery" 
             />
         </div>
     );

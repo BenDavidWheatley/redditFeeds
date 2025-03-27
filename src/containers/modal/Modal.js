@@ -18,9 +18,9 @@ function Modal(props) {
         <div data-testid='modalMainContainer' className={display ? Style.show : Style.hide}>
             <section data-testid="modal" className={Style.modalBackgroundBlur}>
                 <div className={Style.modalContainer}>
-                    <a className={Style.readMoreLink} onClick={() => dispatch(toggleModal())}>
+                    <p className={Style.readMoreLink} onClick={() => dispatch(toggleModal())}>
                         Close
-                    </a>
+                    </p>
                     {data && data.gallery ? ( <Gallery class={Style.media} images={data.gallery} modal={true}/> ) : 
                     data && data.image ? ( <Image class={Style.media}  image={data.image} modal={true}/> ) :
                     data && data.video ? ( <Video className={`${Style.videoContainer} ${Style.media}`} video={data.video} modal={true}/> ) : null }

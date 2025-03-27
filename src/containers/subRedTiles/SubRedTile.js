@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './subRedTile.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { getSubredditAsync } from '../search/searchSlice';
 import { removeSubreddit } from '../subReddits/subRedSlice'; 
 
@@ -9,7 +9,7 @@ function SubRedTile(props) {
     
     return (
         <section className={Style.mySubContainer}>
-            <a 
+            <div 
                 className={Style.subRedAnchor}
                 onClick={() => {
                     dispatch(getSubredditAsync(props.title));
@@ -28,7 +28,7 @@ function SubRedTile(props) {
                         remove
                     </p>
                 </div>
-            </a>
+            </div>
         </section>
     );
 }
