@@ -1,0 +1,237 @@
+/********** CARD CONTAINER ***********/
+
+.cardContainer {
+    background: linear-gradient(to bottom right, #485363, #232C3D);
+    padding: 30px;
+    max-width: 889px;
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+    flex-direction: row;
+    position: relative;
+    gap: 30px;
+}
+
+.cardContainer:hover {
+    box-shadow: 10px 10px 10px #00000080;
+    transition: all 0.1s;
+}
+
+.withImage{
+    height: auto;
+}
+
+.withoutImage {
+    height: auto;
+    min-height: 339px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+/********** LEFT SECTION - with image and post info ***********/
+
+.leftInnerContainer{
+    flex-direction: column;
+    min-width: 400px;
+    height: 100%;
+}
+
+.videoContainer{
+   width: 550px;
+    height: 500px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px #00000080;
+    margin-bottom: 25px;
+}
+
+.postHeader, .noImageHeader{
+    font-size:30px;
+    font-weight: 400;
+    margin-bottom: 25px; 
+}
+
+.postHeader::first-letter{
+    text-transform: capitalize;
+}
+
+.postMeta {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: 7px;
+    width: 100%;
+}
+
+.category{
+    font-weight: 600;
+    font-size: 11px;
+    text-align: center;
+    background-color: #ff4500;
+    padding: 3px;
+    width: 80px;
+    border-radius: 7px;
+    margin: auto 20px auto 0px;
+}
+
+.datePost{
+    font-size: 11px;
+    font-weight: 300;
+    margin: auto;
+    margin-left: 0px;
+    list-style-type: circle;
+}
+
+.datePost::before {
+    content: "•";
+    display: inline-block;
+    margin-right: 8px; 
+}
+
+.excerpt {
+    line-height: 1.5em; 
+    max-height: 4.5em; 
+    overflow: hidden; 
+}
+
+.readMoreLink {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: auto;
+    margin-left: auto;
+}  
+
+.readMoreLink:hover{
+    color: #ff4500;
+    transition: color 0.3s;
+    cursor: pointer;
+} 
+
+.readMoreLink:active {
+    color: white;
+    transition: color 0s;
+}
+
+.excerptSpan {
+    margin-bottom: 30px;
+}
+
+/* User Info */ 
+
+.postUserInfoContainer{
+    flex-direction: column;
+}
+
+.userInfo{
+    gap: 18px;
+    align-items: center;
+    height: 49px;
+    min-width: 114px;
+    margin-bottom: 47px;
+}
+
+.userInfoImg{
+    height: 49px;
+    width: 49px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px #00000080;
+    fill: #ff4500;
+    border: 1px solid #ff4500;
+    background: white;
+}
+
+.userInfo p {
+    color: #f8f8f8;
+    font-size: 11px;
+}
+
+@media only screen and (max-width: 1130px){
+    .cardContainer {
+        flex-direction: column;
+        gap: 0px;       
+    }
+
+    .userInfo{
+        margin-top: 25px;
+        margin-bottom: 30px;
+        position: absolute; 
+        gap: 30px;
+    }
+
+    .userInfoPostHasImage{
+        top: 0;
+        left: 4%;
+    }
+
+    .postWithoutImage{
+        top: 0;
+    }
+
+    .userInfo img{
+        height: 40px;
+        width: 40px;
+    }
+
+    .postMeta{
+        flex-wrap: wrap;
+    }
+
+    .leftInnerContainer{
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .postHeader{
+        font-size: 21px;
+    }
+
+    .noImageHeader{
+        margin-top: 60px;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    .cardContainer {
+        padding: 60px 5% 5% 5%;
+    }
+
+    .postMeta {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+        justify-content: flex-start;  
+    }
+
+    .readMoreLink {
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-left: 0px;
+    }  
+
+    .leftInnerContainer {
+        min-width: 0px;
+    }
+
+    .postHeader{
+        font-size: 16px;
+    }
+    
+    .excerpt {
+        font-size: 12px;
+        line-height: 1em; 
+        max-height: 3em; 
+    }
+}
+
+
+
+
