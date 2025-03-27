@@ -2,6 +2,7 @@
     "name": "reddit",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://wheatleystudios.github.io/readitreddit", 
     "dependencies": {
         "@reduxjs/toolkit": "^2.5.0",
         "date-fns": "^4.1.0",
@@ -19,7 +20,7 @@
         "build": "react-scripts build",
         "test": "jest",
         "eject": "react-scripts eject",
-         "predeploy": "npm run build",
+        "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
