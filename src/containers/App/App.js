@@ -5,7 +5,7 @@
   import MainFeed from '../mainFeed/MainFeed';
   import SubRedditContainer from '../subReddits/SubRedditSideContainer';
   import ModalContainer from '../modal/Modal';
-  import Footer from '../footer/Footer';
+  import Footer from '../footer/FooterSection';
   import { useDispatch, useSelector } from 'react-redux';
   import { getSubredditAsync } from '../search/searchSlice';
 
