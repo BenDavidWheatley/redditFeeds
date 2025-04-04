@@ -3,7 +3,7 @@
   import Style from './app.module.css';
   import Header from '../header/Header';
   import MainFeed from '../mainFeed/MainFeed';
-  import SubRedditContainer from '../subReddits/SubRedditContainer';
+  import SubRedditContainer from '../subReddits/SubRedditSideContainer';
   import ModalContainer from '../modal/Modal';
   import Footer from '../footer/Footer';
   import { useDispatch, useSelector } from 'react-redux';
