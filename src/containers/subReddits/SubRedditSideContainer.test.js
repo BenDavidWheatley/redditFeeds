@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import SubRedditContainer from '../subReddits/SubRedditContainer';
-import { addSubreddit } from '../subReddits/subRedSlice';
+import SubRedditContainer from './SubRedditContainer';
+import { addSubreddit } from './subRedSlice';
 import Style from './subReddits.module.css';
 
 const mockStore = configureStore([]);
