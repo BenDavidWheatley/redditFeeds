@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './header.module.css';
+import Styles from './headerSection.module.css';
 import Search from '../search/Search';
 const logo = require('./redditLogo.png');
 
