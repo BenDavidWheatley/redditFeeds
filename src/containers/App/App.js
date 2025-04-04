@@ -1,7 +1,7 @@
 
   import React, { useEffect } from 'react';
   import Style from './app.module.css';
-  import Header from '../header/Header';
+  import Header from '../header/HeaderComponent';
   import MainFeed from '../mainFeed/MainFeed';
   import SubRedditContainer from '../subReddits/SubRedditSideContainer';
   import ModalContainer from '../modal/Modal';
